@@ -3,15 +3,17 @@
 # Space Complexity: O(1)
 # Stable: No
 
+
 def selection_sort(arr):
-    n = len(arr)
-    for i in range(n - 1):
-        min_index = i
-        for j in range(i + 1, n):
-            if arr[j] < arr[min_index]:
-                min_index = j
-        arr[i], arr[min_index] = arr[min_index], arr[i]
+    n=len(arr)
+    for i in range(n-1):
+        p=i
+        for j in range(i+1,n):
+            if arr[j]<arr[p]:
+                p=j
+        arr[i],arr[p]=arr[p],arr[i]
     return arr
 
+arr=[5,3,24,5,3,74,3,7,44,8,9,8,7]
 
-print(selection_sort([64, 25, 12, 22, 11]))
+print(selection_sort(arr))
