@@ -11,7 +11,8 @@ def selection_sort(arr):
         for j in range(i+1,n):
             if arr[j]<arr[p]:
                 p=j
-        arr[i],arr[p]=arr[p],arr[i]
+        if p!=i:
+            arr[i],arr[p]=arr[p],arr[i]
     return arr
 
 arr=[5,3,24,5,3,74,3,7,44,8,9,8,7]
