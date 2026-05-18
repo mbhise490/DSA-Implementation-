@@ -12,7 +12,6 @@ def merge(left, right):
 
     m, n = 0, 0
 
-    # compare elements from both arrays
     while m < l and n < r:
 
         if left[m] < right[n]:
@@ -23,12 +22,10 @@ def merge(left, right):
             result.append(right[n])
             n += 1
 
-    # add remaining elements from left array
     while m < l:
         result.append(left[m])
         m += 1
 
-    # add remaining elements from right array
     while n < r:
         result.append(right[n])
         n += 1
@@ -38,17 +35,14 @@ def merge(left, right):
 
 def merge_sort(arr):
 
-    # base case
     if len(arr) <= 1:
         return arr
 
-    # divide array into two halves
     mid = len(arr) // 2
 
     left = merge_sort(arr[:mid])
     right = merge_sort(arr[mid:])
 
-    # merge sorted halves
     return merge(left, right)
 
 
